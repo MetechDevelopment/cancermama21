@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>XII Jornada Viaje a través del cáncer de mama</title>
+  <meta name="description" content="XII Jornada Viaje a través del cáncer de mama" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/assets/images/elmundo-logo.png" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Roboto CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", "helvetica neue", Arial, sans-serif;
+      color: #000;
+      font-size: 17px;
+    }
+
+    body {
+      /* background-attachment: fixed; */
+    }
+
+    a:hover {
+      color: inherit;
+    }
+
+    header {
+      /* background: url("img/img-header.jpg") #011e3e center center no-repeat; */
+      background-size: cover;
+      background-color: #ecdfe6;
+    }
+
+    header .container {
+      position: relative;
+    }
+
+    header a.claim {
+      display: none;
+      font-size: 14px;
+    }
+
+    header .social {
+      display: none;
+    }
+
+    .green-line,
+    .blue-line,
+    .red-line {
+      height: 10px;
+    }
+
+    .green-line.big,
+    .red-line.big {
+      height: 10px;
+    }
+
+    .blue-line {
+      background-color: #878787;
+    }
+
+    .red-line {
+      background-color: #ecdfe6;
+    }
+
+    .green-line {
+      background-color: #fff;
+    }
+
+    .text-red {
+      color: #e30613;
+    }
+
+    .text-green {
+      color: #fff;
+    }
+
+    main {
+      padding: 50px 0 80px;
+    }
+
+    section {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s, opacity 0.5s linear;
+      height: auto;
+    }
+
+    section#ie11,
+    section#thanks,
+    section#thanks.hide,
+    section.hide,
+    .countdown.hide,
+    .ie11 section {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+    }
+
+    section#thanks.show,
+    section.show,
+    .ie11 section#ie11 {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+    }
+
+    .countdown {
+      background-color: #000;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 1.4em;
+      text-align: center;
+      margin-bottom: 2em;
+      padding: 1em;
+    }
+
+    header .countdown {
+      position: absolute;
+      top: 20px;
+    }
+
+    main .countdown {
+      font-size: 1.3em;
+    }
+
+    #claim,
+    #thanks {
+      margin-bottom: 40px;
+    }
+
+    #claim p,
+    #thanks p,
+    #ie11 p {
+      padding: 20px 0;
+    }
+
+    #form .alert {
+      display: none;
+    }
+
+    #form.error .alert {
+      display: block;
+    }
+
+    button>.loading {
+      display: none;
+    }
+
+    button.loading>.quiet {
+      display: none;
+    }
+
+    button.loading>.loading {
+      display: block;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 2em;
+    }
+
+    h1 small {
+      color: #08b6d8;
+      text-transform: none;
+    }
+
+    h2,
+    h3 {
+      color: #000;
+      font-weight: 900;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    h5 {
+      font-size: 16px !important;
+      font-weight: bold !important;
+      padding-bottom: 20px !important;
+    }
+
+    .custom-select {
+      width: auto;
+    }
+
+    label {
+      font-weight: 300;
+    }
+
+    @media (min-width: 576px) {
+      label {
+        text-align: right;
+      }
+
+      label.form-check-label,
+      label.custom-control-label {
+        text-align: left;
+      }
+    }
+
+    .btn {
+      padding: 0.2rem 0.75rem;
+      margin-top: 3px;
+    }
+
+    .btn-success {
+      background-image: linear-gradient(to bottom, #a0cc92 0%, #66ac60 60%);
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .btn-success:hover {
+      background-image: linear-gradient(to bottom, #66ac60 0%, #55964f 60%);
+    }
+
+    .social {
+      list-style: none;
+    }
+
+    .social li {
+      display: inline;
+      margin-right: 40px;
+    }
+
+    footer {
+      padding: 95px 0 35px;
+      position: relative;
+      background-color: #fff;
+    }
+
+    footer .green-line {
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    footer .container {
+      position: relative;
+    }
+
+    footer img {
+      max-width: 120px;
+    }
+
+    .logo {
+      position: absolute;
+      top: -110px;
+    }
+
+    .logo img {
+      max-width: 90px;
+    }
+
+    .legal {
+      position: relative;
+      left: 30%;
+      color: #000;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+
+    .text-info {
+      color: #010101 !important;
+    }
+
+    .background-info {
+      background-color: #ecdfe6;
+      display: block;
+      padding: 15px;
+      color: #000;
+    }
+
+    @media (min-width: 960px) {
+      header a.claim {
+        position: absolute;
+        bottom: 2.5rem;
+        left: calc(50% - 48px);
+        display: block;
+        margin: 0 auto;
+        color: #fff;
+      }
+
+      header a.claim:hover {
+        color: #eee;
+        text-decoration: none;
+      }
+
+      header a.claim::before {
+        animation: bounce 1s ease infinite;
+        bottom: -4rem;
+        color: #fff;
+        content: "╲╱";
+        font-size: 1rem;
+        height: 4.5rem;
+        left: 50%;
+        letter-spacing: -1px;
+        line-height: 4rem;
+        margin-left: -3rem;
+        opacity: 0.8;
+        position: absolute;
+        text-align: center;
+        width: 6rem;
+      }
+
+      header .social {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+      }
+
+      header .social li {
+        margin-right: 20px;
+      }
+
+      header .social img {
+        max-width: 30px;
+      }
+    }
+
+    @media (min-width: 576px) {
+      footer img {
+        max-width: 100%;
+      }
+
+      .logo {
+        position: absolute;
+        top: -157px;
+        left: calc(50% - 132px);
+      }
+
+      .logo img {
+        max-width: 100%;
+      }
+    }
+
+    @keyframes bounce {
+      50% {
+        transform: translateY(-20%);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <!-- <script src="//e00-apps-ue.uecdn.es/tms/js/tms-marca.js"></script> -->
+</head>
+
+<body>
+  <!-- <div class="row" style="margin: 10px 0 10px 0">
+      <div class="col-sm-12 col-md-6">
+        <a href="www.elmundo.es" rel="noopener"
+          ><img
+            style="padding-left: 25px !important; margin-top: 20px !important"
+            src="https://static.conferenciasyformacion.com/images/1435908258_elmundo-svg.svg"
+            width="200px"
+            alt="El Mundo"
+        /></a>
+      </div>
+     <div class="col-sm-12 col-md-6 text-right">
+        <a href="https://www.accenture.com/es-es" rel="noopener"
+          ><img
+            src="https://static.conferenciasyformacion.com/images/1592229075_accenture.svg"
+            width="110px"
+            alt="Accenture"
+        /></a>
+        <a href="https://www.goodyear.eu/es_es/" rel="noopener"
+          ><img style="margin: 10px;"
+            src="https://static.conferenciasyformacion.com/images/1625469497_logo-good-year-copy.png"
+            width="120px"
+            alt="GoodYear"
+        /></a>
+        <a href="https://www.ibercaja.es/" rel="noopener"
+          ><img
+            style="padding-right: 25px !important"
+            src="https://static.conferenciasyformacion.com/images/1594730318_logo-ibercaja1.png"
+            width="150px"
+            alt="IberCaja"
+        /></a>
+      </div> -->
+  </div>
+  <header>
+    <div class="container" style="padding: 95px 0">
+      <!-- <div class="row">
+        <div class="col">
+          <div class="countdown d-block d-md-none">
+            <small>08 de julio de 2021 -- de 09:30 h. a 12:00 h.</small><br />
+            <span></span>
+          </div>
+          <h1>II Encuentro Automoción de El Mundo</h1>
+        </div>
+      </div> -->
+      <!-- <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col" style="font-size: 1.3em; padding-bottom: 20px;">
+              <i class="far fa-clock float-left fa-3x" style="margin-right: 2vh"></i>
+              <a href="calendar.ics" style="color: #000 !important">08 de julio de 2021<br />de 09:30 h. a 12:00 h.</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="row" style="color: #000 !important; padding-bottom: 20px;">
+        <div class="col">
+          <div class="" style="color: #000 !important;">
+            Jueves 21 de octubre de 2021 - de 17:00 h. a 19:00 h.
+          </div>
+          <h1 style="color: #000 !important;">XII Jornada Viaje a través del cáncer de mama</h1>
+        </div>
+      </div>
+      <!-- IFRAME PROD -->
+      <div class="embed-responsive embed-responsive-16by9" width="100%" height="315">
+
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/IVPnMV82Ahk" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen class="embed-responsive-item"></iframe>
+        <!-- <img style="padding-left: 25px !important; margin-top: 20px !important" src="img/img-header.jpg" width="200px"
+          alt="Lucha contra el cancer" /> -->
+      </div>
+  </header>
+
+  <main class="container">
+    <section id="ie11">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <h2>Navegador no Soportado</h2>
+          <p class="text-center">
+            Por favor, utiliza un navegador más moderno, por ejemplo, Edge,
+            Chrome o Firefox.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="main">
+      <div class="row">
+        <div class="col">
+          <div class="countdown d-block d-md-none">
+            <small>Jueves 21 de octubre de 2021 - de 17:00 h. a 19:00 h.</small><br>
+            <span></span>
+          </div>
+          <h1>XII Jornada Viaje a través del cáncer de mama</h1>
+          <div class="row">
+            <div class="col">
+              <table class="table agenda">
+                <tbody>
+                  <tr>
+                    <td>17:00h</td>
+                    <td>
+                      <h4 class="text-info">Apertura Sala</h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>17:03h</td>
+                    <td>
+                      <h4 class="background-info">
+                        Mesa 1: De lo científico a lo práctico
+                      </h4>
+                      <p>
+                        <strong>Dra. Gema Moreno</strong>. Bióloga. Jefa del
+                        Laboratorio de Investigación Traslacional departamento de
+                        Bioquímica-Facultad de Medicina Universidad Autónoma de
+                        Madrid. Instituto de Investigaciones Biomédicas “Alberto
+                        Sols” CSIC-UAM
+                      </p>
+                      <p>
+                        <strong>Dra. Silvia Pérez</strong>. Radióloga. Jefa de Radiología Mamaria MD Anderson Cancer Center Madrid
+                      </p>
+                      <p>
+                        <strong>Dr. Javier Cortés</strong>. Oncólogo Médico. Jefe Unidad de Mama Rúber Internacional Madrid
+                      </p>
+                      <br />
+                      <p>
+                        <strong>Modera:</strong>
+                      </p>
+                      <p>
+                        <strong>Dña. Paz Rubio Posado</strong>. Periodista. RTVE
+                      </p>
+                      <p>
+                        <strong>Dra. Laura G. Estévez</strong>. Oncóloga Médica. Directora Unidad de Mama MD Anderson Cancer Center Madrid
+                      </p>
+                      <br />
+                      <p>
+                        <strong>Preguntas del público</strong>
+                      </p>
+                    </td>
+                  </tr>
+    
+                  <tr>
+                    <td>17:45h</td>
+                    <td>
+                      <h4 class="text-info">
+                        El cáncer de mama y el embarazo. Entrevista con Carlota
+                        Serrano
+                      </h4>
+                      <br />
+                      <p>
+                        <strong>Preguntas del público</strong>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>18:00h</td>
+                    <td>
+                      <h4 class="background-info">
+                        Mesa 2: De lo clínico a la realidad: como hacer más
+                        llevadero este viaje
+                      </h4>
+                      <p>
+                        <strong>Dña. Paloma Domingo</strong>. Fisioterapeuta. Directora Centro Vodder. Presidenta AEL (Asociación Española
+                        del Linfedema)
+                      </p>
+                      <p>
+                          <strong>Dña. Laura Rojas Marcos</strong>. Doctora en Psicología Clínica y de la Salud. Especialista en Psicooncología. 
+                        </p>
+                      <p>
+                        <strong>Dra. Gloria Ortega</strong>. Cirujana General. Jefa
+                        de Cirugía de Mama MD Anderson Cancer Center Madrid
+                      </p>
+                      <p>
+                        <strong>Dra. Yolanda Fernández</strong>. Oncóloga. Jefa de
+                        la Unidad de Mama Hospital Universitario de Asturias
+                      </p>
+                      <br />
+                      <p>
+                        <strong>Modera:</strong>
+                      </p>
+                      <p>
+                        <strong>Dña. Paz Rubio Posado</strong>. Periodista. RTVE
+                      </p>
+                      <p>
+                        <strong>Dra. Isabel Calvo</strong>. Oncóloga Médica. MD Anderson Cancer Center Madrid 
+                      </p>
+                      <br />
+                      <p>
+                        <strong>Preguntas del público</strong>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>18:45h</td>
+                    <td>
+                      <h4 class="text-info">Fin del encuentro</h4>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col" style="font-size: 1.3em">
+              <i class="far fa-clock float-left fa-3x" style="margin-right: 2vh;"></i>
+              <a href="calendar.ics" style="color: #000 !important;">21 de octubre de 2021<br>de 17:00 a
+                19:00</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding-top: 0 !important;">
+    <div class="red-line big mb-5"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <a href="www.elmundo.es" target="_blank" rel="noopener"><img
+              src="https://static.conferenciasyformacion.com/images/1435908258_elmundo-svg.svg" alt="El Mundo"
+              style="margin-top: 23px !important;" /></a>
+        </div>
+        <div class="col-xs-6 col-sm-4 offset-sm-4 col-md-3 offset-md-6 text-right">
+          <a href="https://www.elmundo.es/yodona/portada.html" target="_blank" rel="noopener"><img
+              src="https://e00-elmundo.uecdn.es/yodona/iconos/v2.x/v2.0/logotipo_portada.png" width="60px"
+              alt="YODONA" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" language="javascript" src="https://e00-ue.uecdn.es/cookies/js/policy_v3_utf8.js"></script>
+        <script type="text/javascript" src="https://sdk.privacy-center.org/loader.js" data-key="03f1af55-a479-4c1f-891a-7481345171ce" id="spcloader" async></script>
+        <script type="text/javascript" language="javascript" src="https://e00-ue.uecdn.es/cookies/js/gdpr_dfp.js"></script>
+        <script>
+            TMSBottom();
+        </script> -->
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Nov 5, 2020 18:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.querySelectorAll(".countdown span").forEach(function (el) {
+        el.innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      });
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.querySelectorAll(".countdown").forEach(function (el) {
+          this.classList.add("hide");
+        });
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>
